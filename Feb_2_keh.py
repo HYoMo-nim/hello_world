@@ -37,6 +37,26 @@ print(result)
 
 # No. 1920 수 찾기 -------------------------------
 
+import sys
+input=sys.stdin.readline
+
+n=int(input())
+arr1=set(map(int, input().split()))
+# list 사용할 경우 시간초과 발생->중복값 존재해도 어짜피 있는지 없는지 여부만 찾아보는거기 때문에 의미X
+# 따라서 탐색시간이 O(1)인 set 사용(set은 해시 테이블 기반이라서 리스트와는 다르게(O(n)) 빠름)
+
+k=int(input())
+arr2=list(map(int, input().split()))
+
+for i in arr2:
+    if i in arr1:
+        print(1)
+    else:
+        print(0)
+
+
+# 잘못 푼 11920 버블정렬 문제... -------------------------------
+
 import heapq
 # priority queue를 위해 사용. 대충... 들어온 원소를 무조건 오름차순 정렬해서 저장해두는 큐
 # heapq.heappush(heap, object):heap에 object(원소) 추가
